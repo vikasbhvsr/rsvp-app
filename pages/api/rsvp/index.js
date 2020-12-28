@@ -6,15 +6,15 @@ dbConnect();
 export default async (req, res) => {
   const { method } = req;
   switch (method) {
-    case 'GET':
-      try {
-        const rsvps = await RSVP.find({});
-        res.status(200).json({ success: true, data: rsvps });
-      } catch (error) {
-        res.status(400).json({ success: false });
-        console.log(error);
-      }
-      break;
+    // case 'GET':
+    //   try {
+    //     const rsvps = await RSVP.find({});
+    //     res.status(200).json({ success: true, data: rsvps });
+    //   } catch (error) {
+    //     res.status(400).json({ success: false });
+    //     console.log(error);
+    //   }
+    //   break;
     case 'POST':
       try {
         const {

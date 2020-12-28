@@ -17,12 +17,10 @@ export default function Home() {
 
   const router = useRouter();
 
-  const errors = [];
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const res = await fetch('/api/rsvp', {
+    const response = await fetch('/api/rsvp', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -35,17 +33,17 @@ export default function Home() {
         comment: comments,
       }),
     });
-    if (res.ok) {
+    if (response.ok) {
       setLoading(false);
-      router.push('/thankyou');
+      router.push('/thank-you');
     }
     setLoading(false);
-    const data = await res.json();
+    const data = await response.json();
     setMessage(data.message);
   };
 
   useEffect(() => {
-    router.prefetch('/thankyou');
+    router.prefetch('/thank-you');
   }, []);
 
   return (
@@ -61,7 +59,7 @@ export default function Home() {
 
       <main className='max-w-2xl p-4 mx-auto'>
         {message ? (
-          <div className='flex items-center p-3 mb-6 space-x-2 text-red-900 bg-red-100 rounded-lg'>
+          <div className='flex items-center p-3 mb-6 space-x-2 text-sm text-red-900 bg-red-100 rounded-lg'>
             <span className='inline-block'>
               <svg
                 className='w-5 h-5 text-red-900'
@@ -148,7 +146,7 @@ export default function Home() {
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             <div>
               <label className='block' htmlFor='attending'>
-                <span className='text-gray-700'>Attending</span>
+                <span className='text-gray-700'>Will you be attending?</span>
                 <select
                   className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                   required
@@ -165,7 +163,7 @@ export default function Home() {
             {attending === 'Yes' || attending === 'Maybe' ? (
               <div>
                 <label className='block' htmlFor='guests_attending'>
-                  <span className='text-gray-700'>Total Members Attending</span>
+                  <span className='text-gray-700'>Total members attending</span>
                   <input
                     className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
                     required
