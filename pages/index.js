@@ -53,7 +53,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <header className='container'>
+      <header className='container mx-auto'>
         <h1 className='my-8 font-extrabold text-center text-7xl'>RSVP</h1>
       </header>
 

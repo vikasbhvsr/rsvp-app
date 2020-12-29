@@ -1,5 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import RSVP from '../../../models/RSVP';
+import sendSMS from './sendSMS';
 
 dbConnect();
 
@@ -61,6 +62,11 @@ export default async (req, res) => {
             message: 'Please enter total guests attending for the event.',
           });
         }
+
+        const rsvpMessage = `Thank you, ${firstName} for your RSVP. We look forward to seeing you on April 4th.`;
+
+        sendSMS(`+1${phone}`, rsvpMessage);
+
         const rsvp = await RSVP.create(req.body);
         res.status(201).json({ success: true, data: rsvp });
       } catch (error) {
