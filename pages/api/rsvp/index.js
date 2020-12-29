@@ -65,7 +65,7 @@ export default async (req, res) => {
 
         const rsvpMessage = `Thank you, ${firstName} for your RSVP. We look forward to seeing you on April 4th.`;
 
-        sendSMS(`+1${phone}`, rsvpMessage);
+        sendSMS(phone, rsvpMessage);
 
         const rsvp = await RSVP.create(req.body);
         res.status(201).json({ success: true, data: rsvp });
