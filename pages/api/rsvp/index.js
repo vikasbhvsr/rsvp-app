@@ -1,6 +1,6 @@
 import dbConnect from '../../../utils/dbConnect';
 import RSVP from '../../../models/RSVP';
-import sendSMS from './sendSMS';
+import sendSMS from '../../../utils/sendSMS';
 
 dbConnect();
 
@@ -63,7 +63,10 @@ export default async (req, res) => {
           });
         }
 
-        const rsvpMessage = `Thank you, ${firstName} for your RSVP. We look forward to seeing you on April 4th.`;
+        const rsvpMessage = `Thank you, ${firstName} for your RSVP. We look forward to seeing you on April 4th.
+
+        - Vikas & Vaidehi
+        `;
 
         sendSMS(phone, rsvpMessage);
 

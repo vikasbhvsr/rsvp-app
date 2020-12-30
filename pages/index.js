@@ -35,7 +35,10 @@ export default function Home() {
     });
     if (response.ok) {
       setLoading(false);
-      router.push('/thank-you');
+      router.push({
+        pathname: '/thank-you',
+        query: { firstName: firstName, attending: attending },
+      });
     }
     setLoading(false);
     const data = await response.json();
