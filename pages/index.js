@@ -62,23 +62,22 @@ export default function Home() {
 
       <main className='max-w-2xl p-4 mx-auto'>
         {message ? (
-          <div className='flex items-center p-3 mb-6 space-x-2 text-sm text-red-900 bg-red-100 rounded-lg'>
-            <span className='inline-block'>
-              <svg
-                className='w-5 h-5 text-red-900'
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-                />
-              </svg>
-            </span>
+          <div className='flex items-start p-3 mb-6 space-x-2 text-sm text-red-900 bg-red-100 rounded-lg'>
+            <svg
+              className='w-5 h-5 text-red-900'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+              />
+            </svg>
+
             <p>{message}</p>
           </div>
         ) : (
