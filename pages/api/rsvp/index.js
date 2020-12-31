@@ -1,6 +1,7 @@
 import dbConnect from '../../../utils/dbConnect';
 import RSVP from '../../../models/RSVP';
 import sendSMS from '../../../utils/sendSMS';
+import sendEmail from '../../../utils/sendEmail';
 
 dbConnect();
 
@@ -62,6 +63,8 @@ export default async (req, res) => {
             message: 'Please enter total guests attending for the event.',
           });
         }
+        const rsvp = await RSVP.create(req.body);
+        res.status(201).json({ success: true, data: rsvp });
 
         const rsvpMessage = `Thank you, ${firstName} for your RSVP. We look forward to seeing you on April 4th.
 
@@ -69,9 +72,7 @@ export default async (req, res) => {
         `;
 
         sendSMS(phone, rsvpMessage);
-
-        const rsvp = await RSVP.create(req.body);
-        res.status(201).json({ success: true, data: rsvp });
+        sendEmail(email, process.env.SENDGRID_EMAIL_ADDRESS, firstName);
       } catch (error) {
         res.status(400).json({ success: false });
       }

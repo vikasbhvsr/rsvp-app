@@ -50,7 +50,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Baby Shower RSVP</title>
         <link rel='icon' href='/favicon.ico' />
@@ -95,7 +95,7 @@ export default function Home() {
               <label className='block' htmlFor='first_name'>
                 <span className='text-gray-700'>First Name</span>
                 <input
-                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                   required
                   type='text'
                   name='first_name'
@@ -108,7 +108,7 @@ export default function Home() {
               <label className='block' htmlFor='last_name'>
                 <span className='text-gray-700'>Last Name</span>
                 <input
-                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                   required
                   type='text'
                   name='last_name'
@@ -123,7 +123,7 @@ export default function Home() {
               <label className='block' htmlFor='email'>
                 <span className='text-gray-700'>Email Address</span>
                 <input
-                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                   required
                   type='email'
                   name='email'
@@ -136,7 +136,7 @@ export default function Home() {
               <label className='block' htmlFor='phone'>
                 <span className='text-gray-700'>Phone Number</span>
                 <input
-                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                   required
                   type='tel'
                   name='phone'
@@ -151,7 +151,7 @@ export default function Home() {
               <label className='block' htmlFor='attending'>
                 <span className='text-gray-700'>Will you be attending?</span>
                 <select
-                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                  className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                   required
                   name='attending'
                   value={attending}
@@ -168,7 +168,7 @@ export default function Home() {
                 <label className='block' htmlFor='guests_attending'>
                   <span className='text-gray-700'>Total members attending</span>
                   <input
-                    className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                    className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                     required
                     type='number'
                     name='guests_attending'
@@ -187,7 +187,7 @@ export default function Home() {
             <label className='block' htmlFor='comments'>
               <span className='text-gray-700'>Leave A Message</span>
               <textarea
-                className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-blue-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50'
+                className='block w-full mt-1 border-indigo-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring-2 focus:ring-indigo-200 focus:ring-opacity-50'
                 name='comments'
                 row={30}
                 value={comments}
@@ -197,7 +197,7 @@ export default function Home() {
           </div>
 
           <button
-            className='flex items-center justify-center px-3 py-2 bg-indigo-200 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-200 disabled:opacity-25 '
+            className='flex items-center justify-center px-3 py-2 bg-indigo-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-200 disabled:opacity-25 '
             type='submit'
           >
             Send RSVP
@@ -205,6 +205,6 @@ export default function Home() {
           </button>
         </form>
       </main>
-    </div>
+    </>
   );
 }
