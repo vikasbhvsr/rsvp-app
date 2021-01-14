@@ -13,10 +13,10 @@ async function sendEmail(to, from, name) {
     },
   };
 
-  await sgMail
+  sgMail
     .send(message)
-    .then((response) => console.log(response))
-    .catch((error) => console.log(error));
+    .then((response) => console.log('Email sent', response))
+    .catch((error) => console.error(error));
 }
 
 // const sendEmail = (to, from, name) => {
